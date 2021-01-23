@@ -1,4 +1,14 @@
-# keras-resnet3d
+# keras-resnet3d 
+
+(Maxime Tchibozo Edit)
+Migrated all code and imports from Keras (2.3.x / Tensorflow 2.0) to tf.keras to maintain all code in Tensorflow 1.15.0
+
+Why? 
+
+Checkpoint saving of Keras models is simple in Tensorflow 1.15.0, but buggy in Tensorflow 2.0
+
+Below: README from the original repo
+
 
 [![Build Status](https://travis-ci.org/JihongJu/keras-resnet3d.svg?branch=master)](https://travis-ci.org/JihongJu/keras-resnet3d) [![codecov](https://codecov.io/gh/JihongJu/keras-resnet3d/branch/master/graph/badge.svg)](https://codecov.io/gh/JihongJu/keras-resnet3d)
 
