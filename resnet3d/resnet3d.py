@@ -24,7 +24,7 @@ from tensorflow.compat.v1.keras.layers import (
     Dense,
     Flatten
 )
-from tensorflow.compat.v1.keras.layers.convolutional import (
+from tensorflow.compat.v1.keras.layers import (
     Conv3D,
     AveragePooling3D,
     MaxPooling3D
