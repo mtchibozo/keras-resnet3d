@@ -9,6 +9,12 @@ from __future__ import (
     print_function,
     unicode_literals
 )
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+import tensorflow.compat.v1.keras as keras
+
+
+
 import six
 from math import ceil
 from keras.models import Model
