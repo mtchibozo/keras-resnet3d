@@ -253,9 +253,9 @@ class Resnet3DBuilder(object):
         block_output = _bn_relu(block)
 
         # average poll and classification
-        pool2 = AveragePooling3D(pool_size=(block._keras_shape[DIM1_AXIS],
-                                            block._keras_shape[DIM2_AXIS],
-                                            block._keras_shape[DIM3_AXIS]),
+        pool2 = AveragePooling3D(pool_size=(block.get_shape().as_list()[DIM1_AXIS],
+                                            block.get_shape().as_list()[DIM2_AXIS],
+                                            block.get_shape().as_list()[DIM3_AXIS]),
                                  strides=(1, 1, 1))(block_output)
         flatten1 = Flatten()(pool2)
         if num_outputs > 1:
