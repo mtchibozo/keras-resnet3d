@@ -29,7 +29,7 @@ from tensorflow.compat.v1.keras.layers import (
     AveragePooling3D,
     MaxPooling3D
 )
-from tensorflow.compat.v1.keras.layers.merge import add
+from tensorflow.compat.v1.keras.layers import add
 from tensorflow.compat.v1.keras.layers.normalization import BatchNormalization
 from tensorflow.compat.v1.keras.regularizers import l2
 from tensorflow.compat.v1.keras import backend as K
