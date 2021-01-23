@@ -9,30 +9,30 @@ from __future__ import (
     print_function,
     unicode_literals
 )
+
+import six
+from math import ceil
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 import tensorflow.compat.v1.keras as keras
 
 
-
-import six
-from math import ceil
-from keras.models import Model
-from keras.layers import (
+from tensorflow.compat.v1.keras.models import Model
+from tensorflow.compat.v1.keras.layers import (
     Input,
     Activation,
     Dense,
     Flatten
 )
-from keras.layers.convolutional import (
+from tensorflow.compat.v1.keras.layers.convolutional import (
     Conv3D,
     AveragePooling3D,
     MaxPooling3D
 )
-from keras.layers.merge import add
-from keras.layers.normalization import BatchNormalization
-from keras.regularizers import l2
-from keras import backend as K
+from tensorflow.compat.v1.keras.layers.merge import add
+from tensorflow.compat.v1.keras.layers.normalization import BatchNormalization
+from tensorflow.compat.v1.keras.regularizers import l2
+from tensorflow.compat.v1.keras import backend as K
 
 
 def _bn_relu(input):
