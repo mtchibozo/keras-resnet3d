@@ -83,20 +83,20 @@ def _bn_relu_conv3d(**conv_params):
 
 def _shortcut3d(input, residual):
     """3D shortcut to match input and residual and merges them with "sum"."""
-    stride_dim1 = ceil(input.shape[DIM1_AXIS] \
-        / residual.shape[DIM1_AXIS])
-    stride_dim2 = ceil(input._shape[DIM2_AXIS] \
-        / residual.shape[DIM2_AXIS])
-    stride_dim3 = ceil(input.shape[DIM3_AXIS] \
-        / residual.shape[DIM3_AXIS])
-    equal_channels = residual.shape[CHANNEL_AXIS] \
-        == input.shape[CHANNEL_AXIS]
+    stride_dim1 = ceil(input.get_shape().as_list()[DIM1_AXIS] \
+        / residual.get_shape().as_list()[DIM1_AXIS])
+    stride_dim2 = ceil(input.get_shape().as_list()[DIM2_AXIS] \
+        / residual.get_shape().as_list()[DIM2_AXIS])
+    stride_dim3 = ceil(input.get_shape().as_list()[DIM3_AXIS] \
+        / residual.get_shape().as_list()[DIM3_AXIS])
+    equal_channels = residual.get_shape().as_list()[CHANNEL_AXIS] \
+        == input.get_shape().as_list()[CHANNEL_AXIS]
 
     shortcut = input
     if stride_dim1 > 1 or stride_dim2 > 1 or stride_dim3 > 1 \
             or not equal_channels:
         shortcut = Conv3D(
-            filters=residual.shape[CHANNEL_AXIS],
+            filters=residual.get_shape().as_list()[CHANNEL_AXIS],
             kernel_size=(1, 1, 1),
             strides=(stride_dim1, stride_dim2, stride_dim3),
             kernel_initializer="he_normal", padding="valid",
