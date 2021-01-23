@@ -30,7 +30,7 @@ from tensorflow.compat.v1.keras.layers import (
     MaxPooling3D
 )
 from tensorflow.compat.v1.keras.layers import add
-from tensorflow.compat.v1.keras.layers.normalization import BatchNormalization
+from tensorflow.compat.v1.keras.layers import BatchNormalization
 from tensorflow.compat.v1.keras.regularizers import l2
 from tensorflow.compat.v1.keras import backend as K
 
